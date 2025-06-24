@@ -69,7 +69,8 @@ export default async (request: Request, context: Context) => {
     body: request.body,
     method: request.method,
     headers,
-  });
+    duplex: 'half',
+  } as RequestInit);
 
   const responseHeaders = {
     ...CORS_HEADERS,
